@@ -24,3 +24,19 @@ export const getCoinDetail = async (id) => {
     return {}
   }
 }
+
+
+export const getCoinChart = async (id) => {
+  try {
+    const params = {
+      vs_currency: 'usd',
+      days: 30
+    }
+    const { data: coinChart } = await axios.get(`/coins/${id}/market_chart`, {params})
+    console.log({coinChart})
+    return coinChart
+  } catch (e) {
+    console.log({errorGetChart: e})
+    return {}
+  }
+}

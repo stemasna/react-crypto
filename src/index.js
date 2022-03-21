@@ -4,10 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './api/axios'
+import {createTheme, ThemeProvider} from '@mui/material';
+import blue from '@mui/material/colors/blue';
+
+const theme = createTheme({
+  palette: {
+    primary: blue,
+  },
+});
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,6 +1,7 @@
 import {useEffect, useMemo, useState} from 'react';
 import {getCoinDetail, getCoinList} from '../api';
 import {CoinRow} from './coinRow';
+import TextField from '@mui/material/TextField';
 
 export const CoinList = ({}) => {
 
@@ -29,7 +30,7 @@ export const CoinList = ({}) => {
 
   return (
     <div className="coin-list">
-      <input placeholder={'Search'} onChange={onTextChange}/>
+      <TextField placeholder={'Search'} onChange={onTextChange} style={{color: 'white'}}/>
       {filteredCoins.map((coin) => <CoinRow coin={coin}/>)}
     </div>
   );
